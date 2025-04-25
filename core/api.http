@@ -1,0 +1,27 @@
+GET  http://127.0.0.1:8000/api/habits HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTYxNjkzLCJpYXQiOjE3NDU1NjEzOTMsImp0aSI6ImY1ODY4YjE2Y2RjMDRhNGViOGRlNDgyOTM2NzZmN2ZiIiwidXNlcl9pZCI6MX0.IdNJawIvKuHImc19PKmg_6ROXcKkuJoBrO1dWVTwr08
+###
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+  "username": "doe",
+  "email": "doe@gmail.com",
+  "password": "doe@123"
+}
+
+###
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+  "username": "vignesh",
+  "password": "vignesh"
+}
+
+###
+POST http://127.0.0.1:8000/api/logout/
+Content-Type: application/json
+Authorization: Bearer <your_token_here>
+
+{}
