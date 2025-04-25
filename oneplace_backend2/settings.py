@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     'oneplaceapp-l8vy.onrender.com',
     'localhost',
     '127.0.0.1',
+    "*",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
