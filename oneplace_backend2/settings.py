@@ -176,6 +176,7 @@ REST_FRAMEWORK = {
 
 
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # WhiteNoise for static files in production
