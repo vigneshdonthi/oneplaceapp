@@ -157,14 +157,15 @@ CORS_ALLOW_ALL_ORIGINS = True
 # WhiteNoise for static files in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 #CSRF_TRUSTED_ORIGINS = [f'https://oneplaceapp-f.onrender.com']
-CORS_ALLOWED_ORIGINS = [
-    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
-    "http://localhost:3000",  # For local testing from React Native
-]
+#######################allowed and trusted origins removed################################################################3
+#CORS_ALLOWED_ORIGINS = [
+#    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
+#    "http://localhost:3000",  # For local testing from React Native
+#]
 
-# CSRF trusted origins
-CSRF_TRUSTED_ORIGINS = [
-    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
-    "http://localhost:3000",  # For local testing
-]
+# CSRF trusted origins removed
+#CSRF_TRUSTED_ORIGINS = [
+#    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
+#    "http://localhost:3000",  # For local testing
+#]
 
