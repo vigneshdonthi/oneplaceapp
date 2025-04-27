@@ -12,47 +12,21 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-
-
-
-
-
-
-
-
-
-
-RENDER_DOMAIN = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-
-if RENDER_DOMAIN:
-    CSRF_TRUSTED_ORIGINS = [f'https://{RENDER_DOMAIN}']
-    ALLOWED_HOSTS = [RENDER_DOMAIN,"*"]
-else:
-    CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1',"*"]
-
-
-
-
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-dd=p(py%&!jt39!+_bvd+fvdti7@+d1ah3bnl@6^va9bz9r8@p'
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 
-
-
-
-
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,6 +53,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
      'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -153,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -164,7 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
 'DEFAULT_AUTHENTICATION_CLASSES': [
 'rest_framework_simplejwt.authentication.JWTAuthentication',
-
+'rest_framework.authentication.SessionAuthentication', #need ot remove
 'rest_framework.authentication.BasicAuthentication',
 ],
 'DEFAULT_PERMISSION_CLASSES': [
@@ -175,12 +151,9 @@ REST_FRAMEWORK = {
 #startting from here
 
 
-
 CORS_ALLOW_ALL_ORIGINS = True
 
 
 # WhiteNoise for static files in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-
-
+CSRF_TRUSTED_ORIGINS = [f'https://oneplaceapp-f.onrender.com']
