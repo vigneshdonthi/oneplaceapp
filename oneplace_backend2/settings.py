@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -164,8 +164,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 #]
 
 # CSRF trusted origins removed
-#CSRF_TRUSTED_ORIGINS = [
-#    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
-#    "http://localhost:3000",  # For local testing
-#]
+CSRF_TRUSTED_ORIGINS = [
+    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
+    "http://localhost:3000",  # For local testing
+]
 
