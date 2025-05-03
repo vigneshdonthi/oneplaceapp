@@ -156,7 +156,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # WhiteNoise for static files in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-CSRF_TRUSTED_ORIGINS = [f'https://oneplaceapp-f.onrender.com']
+CSRF_TRUSTED_ORIGINS = [f'https://oneplaceapp-f.onrender.com',"http://localhost:3000"]
 #######################allowed and trusted origins removed################################################################3
 #CORS_ALLOWED_ORIGINS = [
 #    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
