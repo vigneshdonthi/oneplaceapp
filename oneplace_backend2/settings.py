@@ -164,8 +164,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 #]
 
 # CSRF trusted origins removed
-CSRF_TRUSTED_ORIGINS = [
-    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
-    "http://localhost:3000",  # For local testing
-]
+#CSRF_TRUSTED_ORIGINS = [
+#    "https://oneplaceapp-f.onrender.com",  # Replace with your Render app URL
+#    "http://localhost:3000",  # For local testing
+#]
 
