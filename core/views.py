@@ -20,6 +20,18 @@ from .serializers import (
     RegisterSerializer,
     UserProfileSerializer
 )
+#added sample page
+from django.http import JsonResponse
+from django.views import View
+
+class SampleJSONView(View):
+    def get(self, request, *args, **kwargs):
+        data = {
+            'message': 'This is a Jsample page!',
+            'status': 'success',
+            'user': 'guest'
+        }
+        return JsonResponse(data)
 
 
 class UserProfileView(APIView):
